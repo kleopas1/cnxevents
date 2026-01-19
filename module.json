@@ -1,0 +1,29 @@
+{
+    "name": "Hotel Events and Banquets Management",
+    "alias": "cnxevents",
+    "description": "Manage hotel events and banquets with integration to LJPc calendar module.",
+    "version": "2.0.0",
+    "detailsUrl": "",
+    "author": "Cyntrix Ltd",
+    "authorUrl": "https://cyntrix.net",
+    "requiredAppVersion": "1.8.2",
+    "license": "AGPL-3.0",
+    "keywords": [
+        "cyntrix",
+        "events",
+        "hotel",
+        "banquets",
+        "management"
+    ],
+    "active": 1,
+    "order": 0,
+    "requiredModules": {},
+    "providers": [
+        "Modules\\CnxEvents\\Providers\\CnxEventsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}
