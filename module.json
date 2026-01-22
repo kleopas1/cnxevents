@@ -1,7 +1,7 @@
 {
     "name": "Hotel Events and Banquets Management",
     "alias": "cnxevents",
-    "description": "Manage hotel events and banquets with integration to LJPc calendar module.",
+    "description": "A hotel event and banquet management module for FreeScout, providing built-in scheduling for hotel events and banquets within the help desk system.",
     "version": "2.0.0",
     "detailsUrl": "",
     "author": "Cyntrix Ltd",

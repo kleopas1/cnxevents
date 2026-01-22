@@ -33,7 +33,37 @@ class CnxEventsServiceProvider extends ServiceProvider
      */
     public function hooks()
     {
-        
+        // Add Events menu item to main navigation
+        \Eventy::addAction('menu.append', function() {
+            echo '<li class="' . \App\Misc\Helper::menuSelectedHtml('cnxevents') . '"><a href="' . route('cnxevents.events.index') . '"><i class="glyphicon glyphicon-calendar"></i> ' . __('Events') . '</a></li>';
+        });
+
+        // Add cnxevents to menu selection logic
+        \Eventy::addFilter('menu.selected', function($menu) {
+            $menu['cnxevents'] = [
+                'cnxevents.events.index',
+                'cnxevents.events.create',
+                'cnxevents.events.show',
+                'cnxevents.events.edit',
+                'cnxevents.calendar',
+                'cnxevents.analytics',
+                'cnxevents.settings.index',
+                'cnxevents.departments.index',
+                'cnxevents.departments.create',
+                'cnxevents.departments.show',
+                'cnxevents.departments.edit',
+                'cnxevents.custom-fields.index',
+                'cnxevents.custom-fields.create',
+                'cnxevents.custom-fields.show',
+                'cnxevents.custom-fields.edit',
+                'cnxevents.venues.index',
+                'cnxevents.venues.create',
+                'cnxevents.venues.show',
+                'cnxevents.venues.edit',
+                'cnxevents.beo.show',
+            ];
+            return $menu;
+        });
     }
 
     /**
