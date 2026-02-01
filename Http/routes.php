@@ -7,6 +7,8 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => \Helper::getSubdirect
     // Events
     Route::resource('events', 'EventController');
     Route::post('events/{event}/confirm', 'EventController@confirm')->name('events.confirm');
+    Route::post('events/{event}/cancel', 'EventController@cancel')->name('events.cancel');
+    Route::post('events/{event}/activate', 'EventController@activate')->name('events.activate');
 
     // Calendar
     Route::get('calendar', 'CalendarController@index')->name('calendar');

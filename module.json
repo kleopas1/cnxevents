@@ -2,7 +2,7 @@
     "name": "Hotel Events and Banquets Management",
     "alias": "cnxevents",
     "description": "A hotel event and banquet management module for FreeScout, providing built-in scheduling for hotel events and banquets within the help desk system.",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "img": "https://cyntrix.ai/assets/images/logo.png",
     "latestVersionUrl": "https://raw.githubusercontent.com/kleopas1/cnxevents/refs/heads/main/module.json",
     "latestVersionZipUrl": "https://github.com/kleopas1/cnxevents/archive/refs/heads/main.zip",

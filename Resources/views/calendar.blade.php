@@ -321,9 +321,10 @@
             <div style="display: flex; align-items: center; gap: 8px;">
                 <label for="status-filter" style="margin: 0; font-weight: 600;">Status:</label>
                 <select name="status" id="status-filter" class="form-control" style="width: 150px;">
-                    <option value="">All Statuses</option>
+                    <option value="">Active Events</option>
                     <option value="confirmed" {{ $filterStatus === 'confirmed' ? 'selected' : '' }}>Confirmed</option>
                     <option value="request" {{ $filterStatus === 'request' ? 'selected' : '' }}>Request</option>
+                    <option value="cancelled" {{ $filterStatus === 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                 </select>
             </div>
 

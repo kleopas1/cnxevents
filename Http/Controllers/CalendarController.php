@@ -91,6 +91,9 @@ class CalendarController extends Controller
         
         if ($filterStatus) {
             $eventsQuery->where('status', $filterStatus);
+        } else {
+            // By default, exclude cancelled events
+            $eventsQuery->whereIn('status', ['request', 'confirmed']);
         }
         
         if ($filterVenue) {
@@ -150,6 +153,9 @@ class CalendarController extends Controller
         
         if ($filterStatus) {
             $eventsQuery->where('status', $filterStatus);
+        } else {
+            // By default, exclude cancelled events
+            $eventsQuery->whereIn('status', ['request', 'confirmed']);
         }
         
         if ($filterVenue) {
@@ -214,6 +220,9 @@ class CalendarController extends Controller
         
         if ($filterStatus) {
             $eventsQuery->where('status', $filterStatus);
+        } else {
+            // By default, exclude cancelled events
+            $eventsQuery->whereIn('status', ['request', 'confirmed']);
         }
         
         if ($filterVenue) {

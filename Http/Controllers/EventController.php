@@ -23,6 +23,9 @@ class EventController extends Controller
         // Filters
         if ($request->filled('status')) {
             $query->where('status', $request->status);
+        } else {
+            // By default, exclude cancelled events
+            $query->whereIn('status', ['request', 'confirmed']);
         }
         if ($request->filled('venue_id')) {
             $query->where('venue_id', $request->venue_id);
@@ -352,5 +355,29 @@ class EventController extends Controller
         $event->update(['status' => 'confirmed']);
 
         return redirect()->back()->with('success', 'Event confirmed successfully.');
+    }
+
+    /**
+     * Cancel an event
+     */
+    public function cancel($id)
+    {
+        $event = Event::findOrFail($id);
+        $event->status = 'cancelled';
+        $event->save();
+
+        return redirect()->back()->with('success', 'Event cancelled successfully.');
+    }
+
+    /**
+     * Activate a cancelled event (return to request status)
+     */
+    public function activate($id)
+    {
+        $event = Event::findOrFail($id);
+        $event->status = 'request';
+        $event->save();
+
+        return redirect()->back()->with('success', 'Event activated successfully.');
     }
 }

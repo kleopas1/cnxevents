@@ -61,6 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Cancel event buttons
+    document.querySelectorAll('.cancel-event-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            if (!confirm('Are you sure you want to cancel this event?')) {
+                e.preventDefault();
+            }
+        });
+    });
+
     // Form submit handler
     const eventForm = document.getElementById('eventForm');
     if (eventForm) {
